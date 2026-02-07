@@ -36,3 +36,5 @@ ALTER TABLE `cierre`
   MODIFY `senia`                   DECIMAL(12,2) NOT NULL DEFAULT 0.00,
   MODIFY `ventas`                  DECIMAL(12,2) NOT NULL DEFAULT 0.00,
   MODIFY `monto_compra_materiales` DECIMAL(12,2) NOT NULL DEFAULT 0.00;
+  
+  alter table cierre add column descuento_efectivo DECIMAL(12,2) after monto_presupuestos;

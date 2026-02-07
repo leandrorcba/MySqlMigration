@@ -73,7 +73,6 @@ select * from ventas where id_insumos is null and id_material is null;
 #FALTAN AGREGAR VARIOS ELEMENTOS A LOS INSUMOS
 
 
-
 CREATE TABLE venta_detalle (
   id_venta_detalle INT AUTO_INCREMENT PRIMARY KEY,
   id_venta         INT NOT NULL,
@@ -82,4 +81,4 @@ CREATE TABLE venta_detalle (
   precio_material  DECIMAL(10,2) NULL,                  -- de tu columna actual
   cantidad         INT NULL,
   precio_unitario  DECIMAL(10,2) NULL,
-  precio_total     DECIMAL(10,2) NOT NULL,              -- total de la línea
+  precio_total     DECIMAL(10,2) NOT NULL);              -- total de la línea

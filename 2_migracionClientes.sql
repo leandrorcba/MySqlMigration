@@ -1,16 +1,3 @@
-#Creo la tabla tipo_cliente
-CREATE TABLE tipo_cliente (
-    id_tipo_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_tipo VARCHAR(100) NOT NULL
-);
-
-#Creo los valores para la tabla tipo_cliente
-INSERT INTO tipo_cliente (nombre_tipo)
-VALUES
-('NORMAL'),
-('EMPRESA'),
-('ESTUDIANTE');
-
 #Modifica el tipo de datos del campo precioMinutoEmpresa y lo renombra a precio_minuto_empresa
 ALTER TABLE clientes
 MODIFY COLUMN precioMinutoEmpresa DECIMAL(10,2) DEFAULT NULL;
@@ -81,3 +68,8 @@ alter table clientes
     
 ALTER TABLE clientes
     ADD COLUMN disabled BOOLEAN DEFAULT FALSE;
+    
+
+CREATE INDEX idx_clientes_dni    ON clientes (dni_cliente);
+CREATE INDEX idx_clientes_tipo   ON clientes (id_tipo_cliente);
+CREATE INDEX idx_clientes_fecha  ON clientes (fecha_creacion);
